@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items
-- has_one :records
+- has_one :record
 
 ## itemsテーブル
 
@@ -36,8 +36,8 @@
 
 ### Association
 
-- belongs_to :users
-- has_one :records
+- belongs_to :user
+- has_one :record
 
 ## shipping_addressesテーブル
 
@@ -54,7 +54,7 @@
 
 ### Association
 
-- belongs_to :records
+- belongs_to :record
 
 
 ## recordsテーブル
@@ -67,4 +67,4 @@
 
 ### Association
 
-- has_one :shipping_addresses
+- has_one :shipping_address
