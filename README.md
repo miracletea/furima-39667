@@ -7,10 +7,10 @@
 | email              | string   | null: false, unique: true |
 | encrypted_password | string   | null: false               |
 | nickname           | string   | null: false               |
-| last_name          | text     | null: false               |
-| first_name         | text     | null: false               |
-| last_name_kana     | text     | null: false               |
-| first_name_kana    | text     | null: false               |
+| last_name          | string   | null: false               |
+| first_name         | string   | null: false               |
+| last_name_kana     | string   | null: false               |
+| first_name_kana    | string   | null: false               |
 | date_of_birth_y    | integer  | null: false               |
 | date_of_birth_m    | integer  | null: false               |
 | date_of_birth_d    | integer  | null: false               |
