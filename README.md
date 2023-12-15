@@ -39,7 +39,7 @@
 - belongs_to :users
 - has_one :records
 
-## shipping_addressテーブル
+## shipping_addressesテーブル
 
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |
@@ -54,7 +54,7 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :records
 
 
 ## recordsテーブル
@@ -67,5 +67,4 @@
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- has_one :shipping_addresses
