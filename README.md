@@ -48,7 +48,7 @@
 | street_address     | string      | null: false                     |
 | building_name      | string      |                                 |
 | phone_number       | integer     | null: false                     |
-| user               | references  | null: false, foreign_key: true  |
+| record            | references  | null: false, foreign_key: true  |
 
 
 ### Association
