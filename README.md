@@ -31,7 +31,7 @@
 | ship_form_id          | integer     | null: false                     |
 | days_to_ship_date_id  | integer     | null: false                     |
 | price                 | integer     | null: false                     |
-| user                  | reference   | null: false, foreign_key: true  |
+| user                  | references  | null: false, foreign_key: true  |
 
 
 ### Association
