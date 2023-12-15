@@ -1,24 +1,73 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type     | Options     |
+| ------------------ | ------   | ----------- |
+| email              | string   | null: false |
+| encrypted_password | string   | null: false |
+| nickname           | string   | null: false |
+| last_name          | text     | null: false |
+| first_name         | text     | null: false |
+| last_name_kana     | text     | null: false |
+| first_name_kana    | text     | null: false |
+| date_of_birth_y    | integer  | null: false |
+| date_of_birth_m    | integer  | null: false |
+| date_of_birth_d    | integer  | null: false |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :items
+- has_one :records
+- has_one :shipping_address
 
-* Database creation
+## itemsテーブル
 
-* Database initialization
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| name               | string      | null: false                     |
+| detail             | text        | null: false                     |
+| category           | string      | null: false                     |
+| condition          | string      | null: false                     |
+| shipping_charge    | string      | null: false                     |
+| ship_form          | string      | null: false                     |
+| days_to_ship_date  | string      | null: false                     |
+| price              | integer     | null: false                     |
+| user               | reference   | null: false, foreign_key: true  |
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :users
+- has_one :records
 
-* ...
+## shipping_addressテーブル
+
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| postal_code        | string      | null: false                     |
+| city_Town_village  | string      | null: false                     |
+| street_address     | string      | null: false                     |
+| building_name      | string      |                                 |
+| phone_number       | integer     | null: false                     |
+| user               | references  | null: false, foreign_key: true  |
+
+
+### Association
+
+- belongs_to :users
+
+
+## recordsテーブル
+
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| user               | references  | null: false, foreign_key: true  |
+| item               | references  | null: false, foreign_key: true  |
+
+
+### Association
+
+- belongs_to :users
+- belongs_to :items
