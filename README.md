@@ -18,7 +18,6 @@
 
 - has_many :items
 - has_one :records
-- has_one :shipping_address
 
 ## itemsテーブル
 
