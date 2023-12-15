@@ -48,7 +48,7 @@
 | city_Town_village  | string      | null: false                     |
 | street_address     | string      | null: false                     |
 | building_name      | string      |                                 |
-| phone_number       | integer     | null: false                     |
+| phone_number       | string      | null: false                     |
 | record             | references  | null: false, foreign_key: true  |
 
 
