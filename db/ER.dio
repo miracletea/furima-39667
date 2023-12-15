@@ -49,7 +49,7 @@
                 <mxCell id="70" value="Item 5    shipping_charge_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="32" vertex="1">
                     <mxGeometry y="146" width="290" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="55" value="Item 6    ship_form_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="32" vertex="1">
+                <mxCell id="55" value="Item 6    ship_form_to_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="32" vertex="1">
                     <mxGeometry y="176" width="290" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="58" value="Item 7    days_to_ship_date_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="32" vertex="1">
@@ -82,7 +82,7 @@
                 <mxCell id="89" value="Item 1   post_code(string型,NOT NULL) " style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="84">
                     <mxGeometry y="26" width="290" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="162" value="Item 2   state_province_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="84">
+                <mxCell id="162" value="Item 2   ship_form_to_id(integer型,NOT NULL)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="84">
                     <mxGeometry y="56" width="290" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="Item 3   city_town_village(string型,NOT NULL) " style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="84">

@@ -28,7 +28,7 @@
 | category_id           | integer     | null: false                     |
 | condition_id          | integer     | null: false                     |
 | shipping_charge_id    | integer     | null: false                     |
-| ship_form_id          | integer     | null: false                     |
+| ship_form_to_id       | integer     | null: false                     |
 | days_to_ship_date_id  | integer     | null: false                     |
 | price                 | integer     | null: false                     |
 | user                  | references  | null: false, foreign_key: true  |
@@ -44,7 +44,7 @@
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |
 | postal_code        | string      | null: false                     |
-| state_province_id  | integer     | null: false                     |
+| ship_form_to_id    | integer     | null: false                     |
 | city_Town_village  | string      | null: false                     |
 | street_address     | string      | null: false                     |
 | building_name      | string      |                                 |
