@@ -20,7 +20,7 @@ class Item < ApplicationRecord
   
   def image_attached
     unless image.attached?
-      errors.add(:image, "を添付してください")
+      errors.add(:image, "can't be blank")
     end
   end
   
