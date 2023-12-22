@@ -1,4 +1,4 @@
-class Ship_from_to < ActiveHash::Base
+class ShipFromTo < ActiveHash::Base
   self.data = [
     {id: 1, ship_from_to: '---'},
     {id: 2, ship_from_to: '北海道'}, {id: 3, ship_from_to: '青森県'}, {id: 4, ship_from_to: '岩手県'},
