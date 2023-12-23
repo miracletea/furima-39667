@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   validates :ship_from_to_id, presence: true
   validates :days_to_ship_date_id, presence: true
 
-  validates :category_id, :condition_id, :shipping_charge_id, :ship_from_to_id, :days_to_ship_date_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :category_id, :condition_id, :shipping_charge_id, :ship_from_to_id, :days_to_ship_date_id, numericality: { only_integer: true, other_than: 1 , message: "can't be blank"}
   
   def image_attached
     unless image.attached?
