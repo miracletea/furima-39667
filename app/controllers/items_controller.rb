@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except:[:index, :show]
-  before_action :authenticate_user!, except:[:index]
+  before_action :authenticate_user!, except:[:index, :show]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -11,14 +11,16 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   private
