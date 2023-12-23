@@ -9,7 +9,8 @@ class Item < ApplicationRecord
   belongs_to :days_to_ship_date
 
   validate :image_attached
-  validates :name, :detail, :price, presence: true
+  validates :name, :detail,presence: true
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   validates :category_id, presence: true
   validates :condition_id, presence: true
   validates :shipping_charge_id, presence: true
