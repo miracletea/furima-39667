@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :move_to_new_user_session]
-  before_action :move_to_new_user_session, except:[:index, :show, :new]
+  before_action :move_to_page, except:[:index, :show, :new]
   before_action :authenticate_user!, except:[:index, :show]
 
 
@@ -36,8 +36,13 @@ class ItemsController < ApplicationController
   end
 
   private
-  def move_to_new_user_session
-    unless user_signed_in? && current_user.id == @item.user_id
+  def move_to_page
+    if user_signed_in?
+      if current_user.id == @item.user_id
+      else
+        redirect_to items_path
+      end
+    else
       redirect_to new_user_session_path
     end
   end
