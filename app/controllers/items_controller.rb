@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :move_to_new_user_session]
-  before_action :move_to_page, except:[:index, :show, :new]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_page, except:[:index, :show, :new, :create]
   before_action :authenticate_user!, except:[:index, :show]
 
 
@@ -32,6 +32,13 @@ class ItemsController < ApplicationController
       redirect_to item_path
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if current_user.id == @item.user.id
+      @item.destroy
+      redirect_to items_path
     end
   end
 
