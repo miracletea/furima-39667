@@ -44,12 +44,12 @@
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |
 | postal_code        | string      | null: false                     |
-| ship_form_to_id    | integer     | null: false                     |
-| city_Town_village  | string      | null: false                     |
+| ship_from_to_id    | integer     | null: false                     |
+| city_town_village  | string      | null: false                     |
 | street_address     | string      | null: false                     |
 | building_name      | string      |                                 |
 | phone_number       | string      | null: false                     |
-| record             | references  | null: false, foreign_key: true  |
+| order              | references  | null: false, foreign_key: true  |
 
 
 ### Association
@@ -57,7 +57,7 @@
 - belongs_to :record
 
 
-## recordsテーブル
+## ordersテーブル
 
 | Column             | Type        | Options                         |
 | ------------------ | ----------- | ------------------------------- |

@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_charge
   belongs_to :ship_from_to
   belongs_to :days_to_ship_date
+  has_one :order
 
   validate :image_attached
   validates :name, :detail,presence: true
