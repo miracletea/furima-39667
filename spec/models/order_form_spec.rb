@@ -8,7 +8,7 @@ end
 
   describe '商品購入' do
     context '商品購入の配送先が登録できるとき' do
-      it '郵便番号(postal_code)、都道府県(ship_from_to_id)、市区町村(city_town_village)、番地(street_address)、電話番号(phone_number)が存在すれば登録できる' do
+      it '郵便番号(postal_code)、都道府県(ship_from_to_id)、市区町村(city_town_village)、番地(street_address)、電話番号(phone_number)、token(token)が存在すれば登録できる' do
         expect(@order_form).to be_valid
       end
       it '建物名(building_name)が存在しなくても登録できる' do
@@ -73,6 +73,11 @@ end
         @order_form.phone_number = '080-1234-5678'
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Phone number is invalid")
+      end
+      it 'tokenが空では購入できない' do
+        @order_form.token = nil
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Token can't be blank")
       end
 
     end

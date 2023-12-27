@@ -1,12 +1,10 @@
 class OrderForm
   include ActiveModel::Model
-  # attr_accessor :token ,:price, :postal_code, :ship_from_to_id, :city_town_village, :street_address, :building_name, :phone_number, :item_id
-  attr_accessor :user_id, :item_id, :postal_code, :ship_from_to_id, :city_town_village, :street_address, :building_name, :phone_number
+  attr_accessor :token, :user_id, :item_id, :postal_code, :ship_from_to_id, :city_town_village, :street_address, :building_name, :phone_number
 
   validates :user_id, presence: true
   validates :item_id, presence: true
-  # validates :token, presence: true
-  # validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+  validates :token, presence: true
   validates :postal_code, presence: true, format: {with: /\A\d{3}[-]\d{4}\z/ }
   validates :ship_from_to_id, presence: true
   validates :city_town_village, presence: true
