@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
-
+  before_action :move_to_page, only:[:index]
   def index
     @order_form = OrderForm.new
   end
@@ -23,6 +23,16 @@ private
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def move_to_page
+    if user_signed_in?
+      if current_user.id == @item.user_id
+        redirect_to root_path
+      end
+    else
+      redirect_to new_user_session_path
+    end
   end
 
 end
