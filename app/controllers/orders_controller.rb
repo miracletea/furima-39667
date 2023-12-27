@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry
     @order_form = OrderForm.new(order_params)
     if @order_form.valid?
       pay_item
@@ -30,7 +31,7 @@ private
 
   def move_to_page
     if user_signed_in?
-      if current_user.id == @item.user_id
+      if current_user.id == @item.user_id || @item.order.present?
         redirect_to root_path
       end
     else
@@ -46,4 +47,5 @@ private
       currency: 'jpy'                 # 通貨の種類（日本円）
       )
     end
-end
+  end
+
