@@ -44,11 +44,12 @@ class ItemsController < ApplicationController
 
   private
   def move_to_page
-    if user_signed_in?
-      if current_user.id == @item.user_id
-      else
-        redirect_to items_path
-      end
+    # サインインかつ商品が購入されてないとき
+    if user_signed_in? && @item.order.present? == false
+        if current_user.id == @item.user_id 
+        else
+          redirect_to items_path
+        end
     else
       redirect_to new_user_session_path
     end
