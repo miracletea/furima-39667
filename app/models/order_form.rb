@@ -9,7 +9,6 @@ class OrderForm
   validates :ship_from_to_id, presence: true
   validates :city_town_village, presence: true
   validates :street_address, presence: true
-  validates :building_name, presence: false
   validates :phone_number, presence: true, format: {with: /\A\d{10,11}\z/ }
 
   validates :ship_from_to_id, numericality: {other_than: 1 , message: "can't be blank"}
