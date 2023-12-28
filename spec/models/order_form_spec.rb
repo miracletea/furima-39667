@@ -71,12 +71,16 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Postal code is invalid")
       end
-      it '電話番号(phone_number)は、10桁以上11桁以内の半角数値、以外は登録できない' do
+      it '電話番号(phone_number)は、9桁未満の半角数値では登録できない' do
         @order_form.phone_number = '123456789'
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Phone number is invalid")
       end
-
+      it '電話番号(phone_number)は、12桁以上の半角数値では登録できない' do
+        @order_form.phone_number = '123456789111'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Phone number is invalid")
+      end
       it '電話番号(phone_number)は、ハイフン「-」があると登録できない' do
         @order_form.phone_number = '080-1234-5678'
         @order_form.valid?
