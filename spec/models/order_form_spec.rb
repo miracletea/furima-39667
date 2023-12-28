@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe OrderForm, type: :model do
-before do
-  @order_form = FactoryBot.build(:order_form)
-end
+  before do
+    # 既存のuserを作成
+    user = FactoryBot.create(:user)
+  
+    # 既存のuserを指定してitemを作成
+    item = FactoryBot.create(:item)
+  
+    # order_formを作成
+    @order_form = FactoryBot.build(:order_form, user_id: user.id, item_id: item.id)
+  end
 
 
   describe '商品購入' do
@@ -28,6 +35,7 @@ end
         expect(@order_form.errors.full_messages).to include("Ship from to can't be blank")
       end
       it '市区町村(city_town_village)が空では購入できない' do
+        # binding.pry
         @order_form.city_town_village = ''
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("City town village can't be blank")
