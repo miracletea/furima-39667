@@ -18,7 +18,7 @@
 
 - has_many :items
 - has_many :records
-- has_one :sns_credentials
+- has_many :sns_credentials
 
 ## itemsテーブル
 
