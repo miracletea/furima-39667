@@ -18,6 +18,7 @@
 
 - has_many :items
 - has_many :records
+- has_one :sns_credentials
 
 ## itemsテーブル
 
@@ -70,3 +71,18 @@
 - belongs_to :user
 - belongs_to :item
 - has_one :shipping_address
+
+
+## sns_credentialsテーブル
+
+| Column             | Type        | Options                         |
+| ------------------ | ----------- | ------------------------------- |
+| provider           | string      | null: false                     |
+| uid                | string      | null: false                     |
+| user               | references  | null: false, foreign_key: true  |
+
+
+
+### Association
+
+- belongs_to :user
