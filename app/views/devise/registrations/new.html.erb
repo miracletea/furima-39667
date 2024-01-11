@@ -101,4 +101,9 @@
 </div>
 <% end %>
 
+<div>
+  <%= button_to "Facebookで登録", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post  %>
+  <%= button_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post  %>
+</div>
+
 <%= render "shared/second-footer"%>
