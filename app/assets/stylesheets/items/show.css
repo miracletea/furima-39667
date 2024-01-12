@@ -180,8 +180,15 @@
   justify-content: center;
 }
 
+.comment-contener {
+  position: relative;
+}
+
 .comment-flag-icon {
   margin: 10px 5px 0 0;
+  position: absolute;
+  top: 0;
+  left: 25%;
 }
 
 .links {
@@ -205,3 +212,6 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+
+
