@@ -101,4 +101,15 @@
 </div>
 <% end %>
 
+<div class= 'sns-main-registrations'>
+  <div class='sns-login-btn'>
+    <div class= 'sns-login-block'>
+      <%= button_to "Facebookで登録", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post, class: "facebook-login-btn" %>
+    </div>
+    <div class= 'sns-login-block'>
+      <%= button_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post, class: "google-login-btn" %>
+    </div>
+  </div>
+</div>
+
 <%= render "shared/second-footer"%>
