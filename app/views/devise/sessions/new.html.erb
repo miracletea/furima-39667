@@ -28,13 +28,20 @@
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-red-btn" %>
   </div>
-
-</div>
 <% end %>
-
-<div>
-  <%= button_to "Facebookでログイン", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post  %>
-  <%= button_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post  %>
 </div>
+
+<div class= 'sns-main-registrations'>
+  <div class='sns-login-btn'>
+    <div class= 'sns-login-block'>
+      <%= button_to "Facebookでログイン", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post, class: "facebook-login-btn" %>
+    </div>
+    <div class= 'sns-login-block'>
+      <%= button_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post, class: "google-login-btn" %>
+    </div>
+  </div>
+</div>
+
+
 
 <%= render "shared/second-footer"%>
