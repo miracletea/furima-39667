@@ -1,7 +1,7 @@
-import consumer from "./consumer"
+import consumer from "channels/consumer"
 
 document.addEventListener("turbo:load", function() {
-  
+
   if(location.pathname.match(/\/items\/\d/)){
 
     consumer.subscriptions.create({
